@@ -1,0 +1,110 @@
+:root{
+--Bright-orange: hsl(31, 77%, 52%);
+--Dark-cyan: hsl(184, 100%, 22%);
+--Very-dark-cyan: hsl(179, 100%, 13%);
+--Transparent-white-paragraphs: rgba(238, 236, 236, 0.75);
+--Very-light-gray: hsl(0, 0%, 95%);
+--Transparent-white: hsla(0, 0%, 43%, 0.562);
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+body{
+   margin: 0;
+}
+.wrapper{
+    max-width: 1134px;
+    margin: 0 auto;
+    position: relative;
+}
+.container{
+    display: flex;
+    border-radius: 50px;
+    width: fit-content;
+    color: white;
+    position:absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h3{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 36px;
+    margin: 10px 0;
+}
+p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 14px;
+    margin-bottom: 40px;
+    color: var(--Transparent-white-paragraphs);
+}
+.column{
+    background-color: var(--Bright-orange);
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 400px;
+    padding: 24px 36px;
+    position: relative;
+}
+.column.one{
+    border-radius:5px 0px 0px 5px;
+}
+.column.two{
+   background-color: var(--Dark-cyan);
+}
+.column.three{
+    background-color: var(--Very-dark-cyan);
+    border-radius:0px 5px 5px 0px;
+}
+.button{
+    border: none;
+    background-color: var(--Very-light-gray);
+    padding: 12px 30px;
+    border-radius:40px;
+    position: absolute;
+    bottom: 30px;
+    font-family:'Lexend Deca', sans-serif;
+    color: var(--Bright-orange);
+    font-size: 14px;
+}
+.button:hover{
+    border: 2px var(--Very-light-gray) solid;
+    cursor: pointer;
+    color: var(--Very-light-gray);
+    background-color: transparent;
+}
+.button.duo{
+    color: var(--Dark-cyan);
+}
+.button.duo:hover{
+    color: var(--Very-light-gray);
+}
+.button.trio{
+    color: var(--Very-dark-cyan);
+}
+.button.trio:hover{
+    color: var(--Very-light-gray);
+}
+.design::before{
+    content:url('images/icon-sedans.svg');
+}
+.design.second::before{
+    content: url('images/icon-suvs.svg');
+}
+.design.third::before{
+    content: url('images/icon-luxury.svg');
+}
+@media (max-width:500px) {
+    .container{
+        flex-direction: column;
+    }
+    .column.column.one{
+        border-radius: 0px;
+    }
+    .column.three{
+        border-radius: 0px;
+    }
+}
